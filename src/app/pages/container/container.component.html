@@ -1,3 +1,25 @@
 <button (click)="addUser()">Add User</button>
 
 <app-material-table [users]="users()"></app-material-table>
+
+
+
+<!-- 5 Different ways to get the value of the input :  https://www.youtube.com/watch?v=4qf1Cw0iYw4-->
+
+<!-- 1. Using a template reference variable -->
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Favorite food</mat-label>
+      <input matInput placeholder="Ex. Pizza" value="" #matInputFavoriteFood>
+    </mat-form-field>
+  </form>
+  
+<button (click)="generatePDF(matInputFavoriteFood.value)">Generate PDF</button>
+<hr>
+<!-- 2. Data binding using ngModel -->
+<input type="text" [(ngModel)]="inputValue" />
+<button (click)="getInputValue()">Generate PDF</button>
+
+<hr>
+
+<div id="qr_code"></div>
